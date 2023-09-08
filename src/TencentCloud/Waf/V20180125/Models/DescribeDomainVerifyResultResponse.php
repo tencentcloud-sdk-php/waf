@@ -18,19 +18,35 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * AddSpartaProtectionAuto返回参数结构体
+ * DescribeDomainVerifyResult返回参数结构体
  *
+ * @method string getMsg() 获取结果描述；如果可以添加返回空字符串
+ * @method void setMsg(string $Msg) 设置结果描述；如果可以添加返回空字符串
+ * @method integer getVerifyCode() 获取检验状态：0表示可以添加，大于0为不能添加
+ * @method void setVerifyCode(integer $VerifyCode) 设置检验状态：0表示可以添加，大于0为不能添加
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class AddSpartaProtectionAutoResponse extends AbstractModel
+class DescribeDomainVerifyResultResponse extends AbstractModel
 {
+    /**
+     * @var string 结果描述；如果可以添加返回空字符串
+     */
+    public $Msg;
+
+    /**
+     * @var integer 检验状态：0表示可以添加，大于0为不能添加
+     */
+    public $VerifyCode;
+
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     public $RequestId;
 
     /**
+     * @param string $Msg 结果描述；如果可以添加返回空字符串
+     * @param integer $VerifyCode 检验状态：0表示可以添加，大于0为不能添加
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -46,6 +62,14 @@ class AddSpartaProtectionAutoResponse extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("Msg",$param) and $param["Msg"] !== null) {
+            $this->Msg = $param["Msg"];
+        }
+
+        if (array_key_exists("VerifyCode",$param) and $param["VerifyCode"] !== null) {
+            $this->VerifyCode = $param["VerifyCode"];
+        }
+
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
             $this->RequestId = $param["RequestId"];
         }

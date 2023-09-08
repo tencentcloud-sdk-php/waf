@@ -18,36 +18,28 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 失败描述
+ * DescribeDomainVerifyResult请求参数结构体
  *
  * @method string getDomain() 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
  * @method void setDomain(string $Domain) 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
- * @method string getMessage() 获取失败信息
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setMessage(string $Message) 设置失败信息
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getInstanceID() 获取实例id
+ * @method void setInstanceID(string $InstanceID) 设置实例id
  */
-class FailedInfo extends AbstractModel
+class DescribeDomainVerifyResultRequest extends AbstractModel
 {
     /**
      * @var string 域名
-注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Domain;
 
     /**
-     * @var string 失败信息
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var string 实例id
      */
-    public $Message;
+    public $InstanceID;
 
     /**
      * @param string $Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Message 失败信息
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $InstanceID 实例id
      */
     function __construct()
     {
@@ -66,8 +58,8 @@ class FailedInfo extends AbstractModel
             $this->Domain = $param["Domain"];
         }
 
-        if (array_key_exists("Message",$param) and $param["Message"] !== null) {
-            $this->Message = $param["Message"];
+        if (array_key_exists("InstanceID",$param) and $param["InstanceID"] !== null) {
+            $this->InstanceID = $param["InstanceID"];
         }
     }
 }
