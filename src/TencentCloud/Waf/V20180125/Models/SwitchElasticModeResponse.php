@@ -18,28 +18,20 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribePorts请求参数结构体
+ * SwitchElasticMode返回参数结构体
  *
- * @method string getInstanceID() 获取实例ID
- * @method void setInstanceID(string $InstanceID) 设置实例ID
- * @method string getEdition() 获取实例类型
- * @method void setEdition(string $Edition) 设置实例类型
+ * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribePortsRequest extends AbstractModel
+class SwitchElasticModeResponse extends AbstractModel
 {
     /**
-     * @var string 实例ID
+     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
-    public $InstanceID;
+    public $RequestId;
 
     /**
-     * @var string 实例类型
-     */
-    public $Edition;
-
-    /**
-     * @param string $InstanceID 实例ID
-     * @param string $Edition 实例类型
+     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
     {
@@ -54,12 +46,8 @@ class DescribePortsRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("InstanceID",$param) and $param["InstanceID"] !== null) {
-            $this->InstanceID = $param["InstanceID"];
-        }
-
-        if (array_key_exists("Edition",$param) and $param["Edition"] !== null) {
-            $this->Edition = $param["Edition"];
+        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
+            $this->RequestId = $param["RequestId"];
         }
     }
 }

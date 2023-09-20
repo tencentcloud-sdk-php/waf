@@ -18,26 +18,26 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteSpartaProtection请求参数结构体
+ * SwitchElasticMode请求参数结构体
  *
- * @method array getDomains() 获取域名列表
- * @method void setDomains(array $Domains) 设置域名列表
- * @method string getEdition() 获取实例类型
- * @method void setEdition(string $Edition) 设置实例类型
+ * @method string getEdition() 获取版本，只能是sparta-waf, clb-waf, cdn-waf
+ * @method void setEdition(string $Edition) 设置版本，只能是sparta-waf, clb-waf, cdn-waf
+ * @method integer getMode() 获取0代表关闭，1代表打开
+ * @method void setMode(integer $Mode) 设置0代表关闭，1代表打开
  * @method string getInstanceID() 获取实例id
  * @method void setInstanceID(string $InstanceID) 设置实例id
  */
-class DeleteSpartaProtectionRequest extends AbstractModel
+class SwitchElasticModeRequest extends AbstractModel
 {
     /**
-     * @var array 域名列表
-     */
-    public $Domains;
-
-    /**
-     * @var string 实例类型
+     * @var string 版本，只能是sparta-waf, clb-waf, cdn-waf
      */
     public $Edition;
+
+    /**
+     * @var integer 0代表关闭，1代表打开
+     */
+    public $Mode;
 
     /**
      * @var string 实例id
@@ -45,8 +45,8 @@ class DeleteSpartaProtectionRequest extends AbstractModel
     public $InstanceID;
 
     /**
-     * @param array $Domains 域名列表
-     * @param string $Edition 实例类型
+     * @param string $Edition 版本，只能是sparta-waf, clb-waf, cdn-waf
+     * @param integer $Mode 0代表关闭，1代表打开
      * @param string $InstanceID 实例id
      */
     function __construct()
@@ -62,12 +62,12 @@ class DeleteSpartaProtectionRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Domains",$param) and $param["Domains"] !== null) {
-            $this->Domains = $param["Domains"];
-        }
-
         if (array_key_exists("Edition",$param) and $param["Edition"] !== null) {
             $this->Edition = $param["Edition"];
+        }
+
+        if (array_key_exists("Mode",$param) and $param["Mode"] !== null) {
+            $this->Mode = $param["Mode"];
         }
 
         if (array_key_exists("InstanceID",$param) and $param["InstanceID"] !== null) {
