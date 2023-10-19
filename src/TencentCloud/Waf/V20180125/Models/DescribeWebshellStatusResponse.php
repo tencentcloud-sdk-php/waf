@@ -18,32 +18,26 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeUserClbWafRegions返回参数结构体
+ * DescribeWebshellStatus返回参数结构体
  *
- * @method array getData() 获取地域（标准的ap-格式）列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setData(array $Data) 设置地域（标准的ap-格式）列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method array getRichDatas() 获取包含详细属性的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setRichDatas(array $RichDatas) 设置包含详细属性的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getDomain() 获取webshell域名
+ * @method void setDomain(string $Domain) 设置webshell域名
+ * @method integer getStatus() 获取开关状态
+ * @method void setStatus(integer $Status) 设置开关状态
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeUserClbWafRegionsResponse extends AbstractModel
+class DescribeWebshellStatusResponse extends AbstractModel
 {
     /**
-     * @var array 地域（标准的ap-格式）列表
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var string webshell域名
      */
-    public $Data;
+    public $Domain;
 
     /**
-     * @var array 包含详细属性的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var integer 开关状态
      */
-    public $RichDatas;
+    public $Status;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -51,10 +45,8 @@ class DescribeUserClbWafRegionsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param array $Data 地域（标准的ap-格式）列表
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $RichDatas 包含详细属性的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Domain webshell域名
+     * @param integer $Status 开关状态
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -70,17 +62,12 @@ class DescribeUserClbWafRegionsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("Domain",$param) and $param["Domain"] !== null) {
+            $this->Domain = $param["Domain"];
         }
 
-        if (array_key_exists("RichDatas",$param) and $param["RichDatas"] !== null) {
-            $this->RichDatas = [];
-            foreach ($param["RichDatas"] as $key => $value){
-                $obj = new ClbWafRegionItem();
-                $obj->deserialize($value);
-                array_push($this->RichDatas, $obj);
-            }
+        if (array_key_exists("Status",$param) and $param["Status"] !== null) {
+            $this->Status = $param["Status"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
