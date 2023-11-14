@@ -18,22 +18,19 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeCCRuleList返回参数结构体
+ * DescribeCCAutoStatus返回参数结构体
  *
- * @method CCRuleLists getData() 获取查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setData(CCRuleLists $Data) 设置查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method integer getAutoCCSwitch() 获取配置状态
+ * @method void setAutoCCSwitch(integer $AutoCCSwitch) 设置配置状态
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeCCRuleListResponse extends AbstractModel
+class DescribeCCAutoStatusResponse extends AbstractModel
 {
     /**
-     * @var CCRuleLists 查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var integer 配置状态
      */
-    public $Data;
+    public $AutoCCSwitch;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,8 +38,7 @@ class DescribeCCRuleListResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param CCRuleLists $Data 查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param integer $AutoCCSwitch 配置状态
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -58,9 +54,8 @@ class DescribeCCRuleListResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = new CCRuleLists();
-            $this->Data->deserialize($param["Data"]);
+        if (array_key_exists("AutoCCSwitch",$param) and $param["AutoCCSwitch"] !== null) {
+            $this->AutoCCSwitch = $param["AutoCCSwitch"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
