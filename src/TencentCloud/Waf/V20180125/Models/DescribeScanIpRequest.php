@@ -18,28 +18,20 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeAntiFakeUrl请求参数结构体
+ * DescribeScanIp请求参数结构体
  *
- * @method string getDomain() 获取域名
- * @method void setDomain(string $Domain) 设置域名
- * @method PageInfo getPageInfo() 获取翻页参数
- * @method void setPageInfo(PageInfo $PageInfo) 设置翻页参数
+ * @method string getIp() 获取要查询的ip地址
+ * @method void setIp(string $Ip) 设置要查询的ip地址
  */
-class DescribeAntiFakeUrlRequest extends AbstractModel
+class DescribeScanIpRequest extends AbstractModel
 {
     /**
-     * @var string 域名
+     * @var string 要查询的ip地址
      */
-    public $Domain;
+    public $Ip;
 
     /**
-     * @var PageInfo 翻页参数
-     */
-    public $PageInfo;
-
-    /**
-     * @param string $Domain 域名
-     * @param PageInfo $PageInfo 翻页参数
+     * @param string $Ip 要查询的ip地址
      */
     function __construct()
     {
@@ -54,13 +46,8 @@ class DescribeAntiFakeUrlRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Domain",$param) and $param["Domain"] !== null) {
-            $this->Domain = $param["Domain"];
-        }
-
-        if (array_key_exists("PageInfo",$param) and $param["PageInfo"] !== null) {
-            $this->PageInfo = new PageInfo();
-            $this->PageInfo->deserialize($param["PageInfo"]);
+        if (array_key_exists("Ip",$param) and $param["Ip"] !== null) {
+            $this->Ip = $param["Ip"];
         }
     }
 }
