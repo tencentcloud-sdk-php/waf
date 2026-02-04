@@ -18,7 +18,7 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 小程序安全资源信息
+ * 独享IP套餐资源信息
  *
  * @method string getResourceIds() 获取资源id
  * @method void setResourceIds(string $ResourceIds) 设置资源id
@@ -30,16 +30,16 @@ use TencentCloud\Common\AbstractModel;
  * @method void setBeginTime(string $BeginTime) 设置开始时间
  * @method string getEndTime() 获取结束时间
  * @method void setEndTime(string $EndTime) 设置结束时间
- * @method integer getCount() 获取购买数量
- * @method void setCount(integer $Count) 设置购买数量
+ * @method integer getInquireNum() 获取申请数量
+ * @method void setInquireNum(integer $InquireNum) 设置申请数量
+ * @method integer getUsedNum() 获取使用数量
+ * @method void setUsedNum(integer $UsedNum) 设置使用数量
  * @method integer getRenewFlag() 获取续费标志
  * @method void setRenewFlag(integer $RenewFlag) 设置续费标志
  * @method string getBillingItem() 获取计费项
  * @method void setBillingItem(string $BillingItem) 设置计费项
- * @method integer getGatewayType() 获取小程序网关类型 1新网关；0老网关
- * @method void setGatewayType(integer $GatewayType) 设置小程序网关类型 1新网关；0老网关
  */
-class MiniPkg extends AbstractModel
+class DedicatedIPPkg extends AbstractModel
 {
     /**
      * @var string 资源id
@@ -67,9 +67,14 @@ class MiniPkg extends AbstractModel
     public $EndTime;
 
     /**
-     * @var integer 购买数量
+     * @var integer 申请数量
      */
-    public $Count;
+    public $InquireNum;
+
+    /**
+     * @var integer 使用数量
+     */
+    public $UsedNum;
 
     /**
      * @var integer 续费标志
@@ -82,20 +87,15 @@ class MiniPkg extends AbstractModel
     public $BillingItem;
 
     /**
-     * @var integer 小程序网关类型 1新网关；0老网关
-     */
-    public $GatewayType;
-
-    /**
      * @param string $ResourceIds 资源id
      * @param integer $Status 状态
      * @param integer $Region 地域
      * @param string $BeginTime 开始时间
      * @param string $EndTime 结束时间
-     * @param integer $Count 购买数量
+     * @param integer $InquireNum 申请数量
+     * @param integer $UsedNum 使用数量
      * @param integer $RenewFlag 续费标志
      * @param string $BillingItem 计费项
-     * @param integer $GatewayType 小程序网关类型 1新网关；0老网关
      */
     function __construct()
     {
@@ -130,8 +130,12 @@ class MiniPkg extends AbstractModel
             $this->EndTime = $param["EndTime"];
         }
 
-        if (array_key_exists("Count",$param) and $param["Count"] !== null) {
-            $this->Count = $param["Count"];
+        if (array_key_exists("InquireNum",$param) and $param["InquireNum"] !== null) {
+            $this->InquireNum = $param["InquireNum"];
+        }
+
+        if (array_key_exists("UsedNum",$param) and $param["UsedNum"] !== null) {
+            $this->UsedNum = $param["UsedNum"];
         }
 
         if (array_key_exists("RenewFlag",$param) and $param["RenewFlag"] !== null) {
@@ -140,10 +144,6 @@ class MiniPkg extends AbstractModel
 
         if (array_key_exists("BillingItem",$param) and $param["BillingItem"] !== null) {
             $this->BillingItem = $param["BillingItem"];
-        }
-
-        if (array_key_exists("GatewayType",$param) and $param["GatewayType"] !== null) {
-            $this->GatewayType = $param["GatewayType"];
         }
     }
 }
