@@ -18,28 +18,28 @@ namespace TencentCloud\Waf\V20180125\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * ModifyHost请求参数结构体
+ * 标签结构体
  *
- * @method HostRecord getHost() 获取<p>编辑的域名配置信息</p>
- * @method void setHost(HostRecord $Host) 设置<p>编辑的域名配置信息</p>
- * @method string getInstanceID() 获取<p>实例唯一ID</p>
- * @method void setInstanceID(string $InstanceID) 设置<p>实例唯一ID</p>
+ * @method string getTagKey() 获取<p>标签键</p>
+ * @method void setTagKey(string $TagKey) 设置<p>标签键</p>
+ * @method string getTagValue() 获取<p>标签值</p>
+ * @method void setTagValue(string $TagValue) 设置<p>标签值</p>
  */
-class ModifyHostRequest extends AbstractModel
+class TagInfo extends AbstractModel
 {
     /**
-     * @var HostRecord <p>编辑的域名配置信息</p>
+     * @var string <p>标签键</p>
      */
-    public $Host;
+    public $TagKey;
 
     /**
-     * @var string <p>实例唯一ID</p>
+     * @var string <p>标签值</p>
      */
-    public $InstanceID;
+    public $TagValue;
 
     /**
-     * @param HostRecord $Host <p>编辑的域名配置信息</p>
-     * @param string $InstanceID <p>实例唯一ID</p>
+     * @param string $TagKey <p>标签键</p>
+     * @param string $TagValue <p>标签值</p>
      */
     function __construct()
     {
@@ -54,13 +54,12 @@ class ModifyHostRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Host",$param) and $param["Host"] !== null) {
-            $this->Host = new HostRecord();
-            $this->Host->deserialize($param["Host"]);
+        if (array_key_exists("TagKey",$param) and $param["TagKey"] !== null) {
+            $this->TagKey = $param["TagKey"];
         }
 
-        if (array_key_exists("InstanceID",$param) and $param["InstanceID"] !== null) {
-            $this->InstanceID = $param["InstanceID"];
+        if (array_key_exists("TagValue",$param) and $param["TagValue"] !== null) {
+            $this->TagValue = $param["TagValue"];
         }
     }
 }
